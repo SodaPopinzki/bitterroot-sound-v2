@@ -1,0 +1,99 @@
+---
+// Hero.astro - Main hero section with headline, CTAs, and trust strip
+// Features: Montana location badge, animated mountain background, trust metrics
+---
+
+<section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+  
+  <!-- Background with Montana Mountains -->
+  <div class="absolute inset-0 bg-gradient-to-br from-forest/90 via-forest-dark/85 to-bark/80">
+    <!-- Mountain SVG Background -->
+    <svg 
+      class="absolute bottom-0 left-0 w-full h-auto" 
+      viewBox="0 0 1440 400" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="xMidYMax slice"
+    >
+      <!-- Back mountain range -->
+      <path 
+        d="M0,300 L120,220 L240,280 L360,180 L480,250 L600,150 L720,220 L840,120 L960,200 L1080,140 L1200,210 L1320,160 L1440,240 L1440,400 L0,400 Z" 
+        fill="#1a4d2e" 
+        opacity="0.6"
+      />
+      <!-- Middle mountain range -->
+      <path 
+        d="M0,350 L100,280 L200,320 L350,240 L500,300 L650,200 L800,280 L950,220 L1100,290 L1250,230 L1440,320 L1440,400 L0,400 Z" 
+        fill="#2d5a3d" 
+        opacity="0.7"
+      />
+      <!-- Front mountain range (Bitterroot silhouette) -->
+      <path 
+        d="M0,380 L80,340 L180,360 L280,310 L400,350 L520,290 L640,340 L760,300 L880,350 L1000,320 L1120,360 L1240,330 L1360,370 L1440,350 L1440,400 L0,400 Z" 
+        fill="#234d32" 
+        opacity="0.5"
+      />
+    </svg>
+    
+    <!-- Subtle texture overlay -->
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect fill=%22transparent%22 width=%22100%22 height=%22100%22/><line x1=%220%22 y1=%2220%22 x2=%22100%22 y2=%2222%22 stroke=%22white%22 stroke-width=%221%22/><line x1=%220%22 y1=%2245%22 x2=%22100%22 y2=%2243%22 stroke=%22white%22 stroke-width=%221%22/><line x1=%220%22 y1=%2270%22 x2=%22100%22 y2=%2272%22 stroke=%22white%22 stroke-width=%221%22/></svg>');"></div>
+  </div>
+  
+  <!-- Hero Content -->
+  <div class="relative z-10 container-custom px-4 py-16 text-center text-white">
+    
+    <!-- Location Badge -->
+    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-warm px-4 py-2 rounded-full border border-white/20 mb-8">
+      <span class="text-lg">🏔️</span>
+      <span class="text-sm md:text-base font-medium">Crafted in Montana's Bitterroot Valley</span>
+    </div>
+    
+    <!-- Main Headline -->
+    <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-shadow max-w-4xl mx-auto">
+      Your Voice. Your Story.
+      <br />
+      <span class="text-gold">Your Song.</span>
+    </h1>
+    
+    <!-- Subheadline -->
+    <p class="text-lg md:text-xl lg:text-2xl text-white/90 max-w-2xl mx-auto mb-10 leading-relaxed">
+      Custom AI-crafted songs for life's meaningful moments. Wedding dances, memorial tributes, business jingles, and more.
+    </p>
+    
+    <!-- CTA Buttons -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+      <a href="#contact" class="btn-primary text-lg px-8 py-4">
+        Create Your Song
+      </a>
+      <a href="#samples" class="btn-secondary text-lg px-8 py-4 flex items-center gap-2">
+        <span>🎧</span>
+        <span>Hear Samples</span>
+      </a>
+    </div>
+    
+    <!-- Trust Strip -->
+    <div class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 pt-8 border-t border-white/20 max-w-2xl mx-auto">
+      <div class="flex items-center gap-2">
+        <span class="text-xl">🎵</span>
+        <span class="font-medium">500+ Songs Delivered</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="text-gold tracking-wider">★★★★★</span>
+        <span class="font-medium">4.9 Rating</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="text-xl">⚡</span>
+        <span class="font-medium">48-72 Hour Delivery</span>
+      </div>
+    </div>
+    
+  </div>
+  
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <svg class="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+    </svg>
+  </div>
+  
+</section>

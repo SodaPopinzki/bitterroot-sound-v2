@@ -1,0 +1,124 @@
+---
+// Header.astro - Sticky navigation with logo and mobile menu
+// Features: Mountain/sound wave logo, 6 nav links, CTA button, mobile hamburger
+
+const navLinks = [
+  { href: '#services', label: 'Services' },
+  { href: '#how-it-works', label: 'How It Works' },
+  { href: '#pricing', label: 'Pricing' },
+  { href: '#samples', label: 'Samples' },
+  { href: '#faq', label: 'FAQ' },
+  { href: '#contact', label: 'Contact' }
+];
+---
+
+<header class="sticky top-0 z-50 bg-warm-white shadow-warm transition-all duration-300">
+  <div class="container-custom flex items-center justify-between px-4 py-4 md:px-8">
+    
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-3 group">
+      <!-- Mountain + Sound Wave SVG Logo -->
+      <svg class="w-10 h-10 transition-transform group-hover:scale-105" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Mountain shape -->
+        <path d="M4 32L14 18L20 24L28 12L36 32H4Z" fill="#1a4d2e"/>
+        <!-- Gold accent line on mountain -->
+        <path d="M8 28L14 20L18 24L28 14L32 28" stroke="#d4a853" stroke-width="2" fill="none"/>
+        <!-- Sound waves -->
+        <path d="M20 6C20 6 22 8 22 10C22 12 20 14 20 14" stroke="#d4a853" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <path d="M24 4C24 4 27 7 27 10C27 13 24 16 24 16" stroke="#d4a853" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+      </svg>
+      <span class="font-display text-xl md:text-2xl font-bold text-forest tracking-wide">
+        BITTERROOT SOUND
+      </span>
+    </a>
+    
+    <!-- Desktop Navigation -->
+    <nav class="hidden lg:block">
+      <ul class="flex items-center gap-8">
+        {navLinks.map(link => (
+          <li>
+            <a 
+              href={link.href} 
+              class="text-bark font-medium hover:text-forest transition-colors duration-200"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+    
+    <!-- CTA Button (Desktop) -->
+    <a href="#contact" class="hidden lg:inline-flex btn-forest">
+      Order Your Song
+    </a>
+    
+    <!-- Mobile Menu Button -->
+    <button 
+      id="mobile-menu-button"
+      class="lg:hidden p-2 text-bark hover:text-forest transition-colors"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+    >
+      <!-- Hamburger Icon -->
+      <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+      <!-- Close Icon (hidden by default) -->
+      <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- Mobile Menu (hidden by default) -->
+  <div id="mobile-menu" class="lg:hidden hidden bg-warm-white border-t border-cream">
+    <nav class="container-custom px-4 py-4">
+      <ul class="flex flex-col gap-4">
+        {navLinks.map(link => (
+          <li>
+            <a 
+              href={link.href} 
+              class="block py-2 text-bark font-medium hover:text-forest transition-colors"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+        <li class="pt-2">
+          <a href="#contact" class="btn-forest inline-block text-center w-full">
+            Order Your Song
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle functionality
+  const menuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const hamburgerIcon = document.getElementById('hamburger-icon');
+  const closeIcon = document.getElementById('close-icon');
+  
+  menuButton?.addEventListener('click', () => {
+    const isOpen = mobileMenu?.classList.contains('hidden');
+    
+    mobileMenu?.classList.toggle('hidden');
+    hamburgerIcon?.classList.toggle('hidden');
+    closeIcon?.classList.toggle('hidden');
+    
+    menuButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  
+  // Close menu when clicking a link
+  mobileMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      hamburgerIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+      menuButton?.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>

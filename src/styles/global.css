@@ -1,0 +1,64 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+/* Tailwind Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base Styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-body text-bark bg-cream;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+/* Component Styles */
+@layer components {
+  .btn-primary {
+    @apply bg-gold text-bark font-semibold px-6 py-3 rounded-warm 
+           shadow-gold transition-all duration-200 
+           hover:bg-gold-dark hover:-translate-y-0.5;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent text-white font-semibold px-6 py-3 rounded-warm
+           border-2 border-white/50 transition-all duration-200
+           hover:bg-white/10 hover:border-white;
+  }
+  
+  .btn-forest {
+    @apply bg-forest text-white font-semibold px-6 py-3 rounded-warm
+           shadow-forest transition-all duration-200
+           hover:bg-forest-dark hover:-translate-y-0.5;
+  }
+  
+  .section-padding {
+    @apply px-4 py-16 md:px-8 md:py-24;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+}
+
+/* Utility Classes */
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .backdrop-blur-warm {
+    backdrop-filter: blur(10px);
+  }
+}

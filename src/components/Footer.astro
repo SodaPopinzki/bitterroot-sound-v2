@@ -1,0 +1,39 @@
+---
+// Footer.astro - Site footer with branding and links
+---
+
+<footer class="bg-bark text-white py-12">
+  <div class="container-custom px-4">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <!-- Logo & Tagline -->
+      <div class="text-center md:text-left">
+        <div class="flex items-center justify-center md:justify-start gap-3 mb-2">
+          <svg class="w-8 h-8" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 32L14 18L20 24L28 12L36 32H4Z" fill="#d4a853"/>
+            <path d="M8 28L14 20L18 24L28 14L32 28" stroke="#faf8f5" stroke-width="2" fill="none"/>
+          </svg>
+          <span class="font-display text-xl font-bold">BITTERROOT SOUND</span>
+        </div>
+        <p class="text-white/70 text-sm">
+          Crafted with ❤️ in Montana's Bitterroot Valley
+        </p>
+      </div>
+      
+      <!-- Quick Links -->
+      <nav class="flex flex-wrap justify-center gap-6 text-sm">
+        <a href="#services" class="text-white/70 hover:text-gold transition-colors">Services</a>
+        <a href="#pricing" class="text-white/70 hover:text-gold transition-colors">Pricing</a>
+        <a href="#faq" class="text-white/70 hover:text-gold transition-colors">FAQ</a>
+        <a href="#contact" class="text-white/70 hover:text-gold transition-colors">Contact</a>
+      </nav>
+      
+    </div>
+    
+    <!-- Bottom Bar -->
+    <div class="mt-8 pt-8 border-t border-white/10 text-center text-sm text-white/50">
+      <p>© 2025 Bitterroot Sound LLC. All rights reserved.</p>
+    </div>
+    
+  </div>
+</footer>

@@ -1,0 +1,131 @@
+---
+// HowItWorks.astro - 4-step process visualization
+// Features: Horizontal timeline on desktop, vertical stack on mobile
+---
+
+<section id="how-it-works" class="py-16 md:py-24 px-4 md:px-8 bg-warm-white">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <p class="text-gold uppercase tracking-wider text-sm font-semibold mb-3">
+        SIMPLE PROCESS
+      </p>
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-forest mb-4">
+        How It Works
+      </h2>
+      <p class="text-stone text-lg max-w-2xl mx-auto">
+        From your story to a finished song in just 4 easy steps.
+      </p>
+    </div>
+
+    <!-- Steps Container -->
+    <div class="relative">
+
+      <!-- Connecting Line (desktop only) -->
+      <div class="hidden lg:block absolute top-16 left-0 right-0 h-1 bg-cream mx-32"></div>
+
+      <!-- Steps Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+
+        <!-- Step 1: Tell Your Story -->
+        <div class="relative">
+          <!-- Step Number Circle -->
+          <div class="relative z-10 w-12 h-12 bg-forest text-white rounded-full flex items-center justify-center font-bold text-xl mb-4 mx-auto lg:mx-0 shadow-forest">
+            1
+          </div>
+
+          <!-- Card -->
+          <div class="bg-white rounded-xl p-6 border border-cream shadow-warm hover:shadow-warm-lg transition-all duration-300 h-full">
+            <div class="text-4xl mb-3 text-center lg:text-left">📝</div>
+            <h3 class="font-display text-xl font-semibold text-bark mb-2 text-center lg:text-left">
+              Tell Your Story
+            </h3>
+            <div class="inline-block bg-gold/10 text-gold px-3 py-1 rounded-full text-xs font-semibold mb-3">
+              5 minutes
+            </div>
+            <p class="text-stone text-sm leading-relaxed">
+              Share the memories, emotions, and details you want captured. Use our simple form to describe the perfect song.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 2: Choose Your Style -->
+        <div class="relative">
+          <!-- Step Number Circle -->
+          <div class="relative z-10 w-12 h-12 bg-forest text-white rounded-full flex items-center justify-center font-bold text-xl mb-4 mx-auto lg:mx-0 shadow-forest">
+            2
+          </div>
+
+          <!-- Card -->
+          <div class="bg-white rounded-xl p-6 border border-cream shadow-warm hover:shadow-warm-lg transition-all duration-300 h-full">
+            <div class="text-4xl mb-3 text-center lg:text-left">🎸</div>
+            <h3 class="font-display text-xl font-semibold text-bark mb-2 text-center lg:text-left">
+              Choose Your Style
+            </h3>
+            <div class="inline-block bg-gold/10 text-gold px-3 py-1 rounded-full text-xs font-semibold mb-3">
+              2 minutes
+            </div>
+            <p class="text-stone text-sm leading-relaxed">
+              Pick from 50+ genres—country, pop, rock, R&B, folk, and more. Select the mood, tempo, and vibe that fits.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 3: We Create Your Song -->
+        <div class="relative">
+          <!-- Step Number Circle -->
+          <div class="relative z-10 w-12 h-12 bg-forest text-white rounded-full flex items-center justify-center font-bold text-xl mb-4 mx-auto lg:mx-0 shadow-forest">
+            3
+          </div>
+
+          <!-- Card -->
+          <div class="bg-white rounded-xl p-6 border border-cream shadow-warm hover:shadow-warm-lg transition-all duration-300 h-full">
+            <div class="text-4xl mb-3 text-center lg:text-left">✨</div>
+            <h3 class="font-display text-xl font-semibold text-bark mb-2 text-center lg:text-left">
+              We Create Your Song
+            </h3>
+            <div class="inline-block bg-gold/10 text-gold px-3 py-1 rounded-full text-xs font-semibold mb-3">
+              48-72 hours
+            </div>
+            <p class="text-stone text-sm leading-relaxed">
+              Our AI-powered system crafts your lyrics while human producers perfect the sound. Every song is reviewed for quality.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 4: Celebrate & Share -->
+        <div class="relative">
+          <!-- Step Number Circle -->
+          <div class="relative z-10 w-12 h-12 bg-forest text-white rounded-full flex items-center justify-center font-bold text-xl mb-4 mx-auto lg:mx-0 shadow-forest">
+            4
+          </div>
+
+          <!-- Card -->
+          <div class="bg-white rounded-xl p-6 border border-cream shadow-warm hover:shadow-warm-lg transition-all duration-300 h-full">
+            <div class="text-4xl mb-3 text-center lg:text-left">🎉</div>
+            <h3 class="font-display text-xl font-semibold text-bark mb-2 text-center lg:text-left">
+              Celebrate & Share
+            </h3>
+            <div class="inline-block bg-gold/10 text-gold px-3 py-1 rounded-full text-xs font-semibold mb-3">
+              Instant delivery
+            </div>
+            <p class="text-stone text-sm leading-relaxed">
+              Receive your finished song via email. Download, stream, or share—it's yours forever.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- CTA Below Steps -->
+    <div class="text-center mt-12">
+      <a href="#contact" class="btn-primary inline-block text-lg px-8 py-4">
+        Start Your Song Today
+      </a>
+    </div>
+
+  </div>
+</section>

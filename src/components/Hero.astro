@@ -39,25 +39,31 @@
     <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect fill=%22transparent%22 width=%22100%22 height=%22100%22/><line x1=%220%22 y1=%2220%22 x2=%22100%22 y2=%2222%22 stroke=%22white%22 stroke-width=%221%22/><line x1=%220%22 y1=%2245%22 x2=%22100%22 y2=%2243%22 stroke=%22white%22 stroke-width=%221%22/><line x1=%220%22 y1=%2270%22 x2=%22100%22 y2=%2272%22 stroke=%22white%22 stroke-width=%221%22/></svg>');"></div>
   </div>
   
+  <!-- Floating Price Badge -->
+  <div class="absolute top-8 right-8 z-20 bg-gold text-bark px-6 py-3 rounded-full shadow-gold font-bold text-lg hidden md:flex items-center gap-2 animate-pulse">
+    <span>💰</span>
+    <span>As Low As $49.99</span>
+  </div>
+
   <!-- Hero Content -->
   <div class="relative z-10 container-custom px-4 py-16 text-center text-white">
-    
-    <!-- Location Badge -->
-    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-warm px-4 py-2 rounded-full border border-white/20 mb-8">
-      <span class="text-lg">🏔️</span>
-      <span class="text-sm md:text-base font-medium">Crafted in Montana's Bitterroot Valley</span>
+
+    <!-- Eyebrow / Price Announcement -->
+    <div class="inline-flex items-center gap-2 bg-gold/90 text-bark px-6 py-3 rounded-full border border-gold mb-6 font-bold text-base md:text-lg shadow-gold">
+      <span>🎵</span>
+      <span>Custom Songs Starting at Just $49.99</span>
     </div>
-    
+
     <!-- Main Headline -->
     <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-shadow max-w-4xl mx-auto">
-      Your Voice. Your Story.
+      Turn Your Story Into a Song
       <br />
-      <span class="text-gold">Your Song.</span>
+      <span class="text-gold">They'll Never Forget</span>
     </h1>
-    
+
     <!-- Subheadline -->
-    <p class="text-lg md:text-xl lg:text-2xl text-white/90 max-w-2xl mx-auto mb-10 leading-relaxed">
-      Custom AI-crafted songs for life's meaningful moments. Wedding dances, memorial tributes, business jingles, and more.
+    <p class="text-lg md:text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto mb-10 leading-relaxed">
+      We craft personalized songs for weddings, memorials, celebrations & more. AI-powered creativity meets human artistry—delivered in 48-72 hours.
     </p>
     
     <!-- CTA Buttons -->
@@ -71,19 +77,27 @@
       </a>
     </div>
     
-    <!-- Trust Strip -->
-    <div class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 pt-8 border-t border-white/20 max-w-2xl mx-auto">
-      <div class="flex items-center gap-2">
-        <span class="text-xl">🎵</span>
-        <span class="font-medium">500+ Songs Delivered</span>
+    <!-- Trust Badges Row -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+      <div class="bg-white/10 backdrop-blur-sm px-4 py-3 rounded-xl border border-white/20 flex flex-col items-center text-center">
+        <span class="text-2xl mb-1">🛡️</span>
+        <span class="text-sm font-semibold">100% Satisfaction</span>
+        <span class="text-xs text-white/80">Guarantee</span>
       </div>
-      <div class="flex items-center gap-2">
-        <span class="text-gold tracking-wider">★★★★★</span>
-        <span class="font-medium">4.9 Rating</span>
+      <div class="bg-white/10 backdrop-blur-sm px-4 py-3 rounded-xl border border-white/20 flex flex-col items-center text-center">
+        <span class="text-2xl mb-1">🎵</span>
+        <span class="text-sm font-semibold">4,300+ Songs</span>
+        <span class="text-xs text-white/80">Created</span>
       </div>
-      <div class="flex items-center gap-2">
-        <span class="text-xl">⚡</span>
-        <span class="font-medium">48-72 Hour Delivery</span>
+      <div class="bg-white/10 backdrop-blur-sm px-4 py-3 rounded-xl border border-white/20 flex flex-col items-center text-center">
+        <span class="text-2xl mb-1">⭐</span>
+        <span class="text-sm font-semibold">4.9/5 Rating</span>
+        <span class="text-xs text-white/80">Customer Rated</span>
+      </div>
+      <div class="bg-white/10 backdrop-blur-sm px-4 py-3 rounded-xl border border-white/20 flex flex-col items-center text-center">
+        <span class="text-2xl mb-1">🇺🇸</span>
+        <span class="text-sm font-semibold">Montana</span>
+        <span class="text-xs text-white/80">Crafted</span>
       </div>
     </div>
     

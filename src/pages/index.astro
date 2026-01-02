@@ -5,6 +5,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
 import Footer from '../components/Footer.astro';
 ---
 
@@ -12,14 +13,9 @@ import Footer from '../components/Footer.astro';
   <Header />
   <main>
     <Hero />
-    
-    <!-- Placeholder sections - will be built in future days -->
-    <section id="services" class="section-padding bg-cream">
-      <div class="container-custom text-center">
-        <h2 class="font-display text-3xl md:text-4xl font-bold text-forest mb-4">Our Services</h2>
-        <p class="text-stone text-lg">Coming Day 2 - 10 service cards with pricing</p>
-      </div>
-    </section>
+
+    <!-- Services Section -->
+    <Services />
     
     <section id="how-it-works" class="section-padding bg-warm-white">
       <div class="container-custom text-center">

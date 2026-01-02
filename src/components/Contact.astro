@@ -1,0 +1,177 @@
+---
+// Contact.astro - Contact form with Netlify integration
+// Features: Netlify Forms, honeypot protection, service selection
+---
+
+<section id="contact" class="py-16 md:py-24 px-4 md:px-8 bg-forest text-white">
+  <div class="max-w-4xl mx-auto">
+
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <p class="text-gold uppercase tracking-wider text-sm font-semibold mb-3">
+        GET STARTED
+      </p>
+      <h2 class="font-display text-3xl md:text-4xl font-bold mb-4">
+        Ready to Create Your Song?
+      </h2>
+      <p class="text-white/90 text-lg max-w-2xl mx-auto">
+        Fill out the form below and we'll get back to you within 24 hours to start crafting your perfect song.
+      </p>
+    </div>
+
+    <!-- Contact Form -->
+    <form
+      name="song-inquiry"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      class="bg-white/10 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-white/20"
+    >
+      <!-- Netlify Form Name -->
+      <input type="hidden" name="form-name" value="song-inquiry" />
+
+      <!-- Honeypot -->
+      <p class="hidden">
+        <label>
+          Don't fill this out if you're human: <input name="bot-field" />
+        </label>
+      </p>
+
+      <div class="space-y-6">
+
+        <!-- Name -->
+        <div>
+          <label for="name" class="block text-sm font-semibold mb-2">
+            Your Name *
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-all"
+            placeholder="John Smith"
+          />
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label for="email" class="block text-sm font-semibold mb-2">
+            Email Address *
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-all"
+            placeholder="john@example.com"
+          />
+        </div>
+
+        <!-- Phone (Optional) -->
+        <div>
+          <label for="phone" class="block text-sm font-semibold mb-2">
+            Phone Number <span class="text-white/60">(Optional)</span>
+          </label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-all"
+            placeholder="(406) 555-0123"
+          />
+        </div>
+
+        <!-- Service Selection -->
+        <div>
+          <label for="service" class="block text-sm font-semibold mb-2">
+            Which service interests you? *
+          </label>
+          <select
+            id="service"
+            name="service"
+            required
+            class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-all"
+          >
+            <option value="" class="bg-bark text-white">Select a service...</option>
+            <option value="Custom Song - $49.99" class="bg-bark text-white">Custom Song - $49.99</option>
+            <option value="Voice Clone Song - $99.99" class="bg-bark text-white">Voice Clone Song - $99.99</option>
+            <option value="Wedding Song - $149.99" class="bg-bark text-white">Wedding Song - $149.99</option>
+            <option value="Memorial Tribute - $199.99" class="bg-bark text-white">Memorial Tribute - $199.99</option>
+            <option value="Pet Tribute - $39.99" class="bg-bark text-white">Pet Tribute - $39.99</option>
+            <option value="Baby Announcement - $59.99" class="bg-bark text-white">Baby Announcement - $59.99</option>
+            <option value="Retirement Song - $79.99" class="bg-bark text-white">Retirement Song - $79.99</option>
+            <option value="Business Jingle - $199.99" class="bg-bark text-white">Business Jingle - $199.99</option>
+            <option value="Podcast Intro - $49.99" class="bg-bark text-white">Podcast Intro - $49.99</option>
+            <option value="Holiday Song - $49.99" class="bg-bark text-white">Holiday Song - $49.99</option>
+            <option value="Not sure yet" class="bg-bark text-white">Not sure yet</option>
+          </select>
+        </div>
+
+        <!-- Message -->
+        <div>
+          <label for="message" class="block text-sm font-semibold mb-2">
+            Tell us about your project *
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            required
+            rows="5"
+            class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-all resize-none"
+            placeholder="Share the story, memories, or details you'd like us to capture in your song..."
+          ></textarea>
+        </div>
+
+        <!-- Timeline (Optional) -->
+        <div>
+          <label for="timeline" class="block text-sm font-semibold mb-2">
+            When do you need it? <span class="text-white/60">(Optional)</span>
+          </label>
+          <input
+            type="text"
+            id="timeline"
+            name="timeline"
+            class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-all"
+            placeholder="e.g., 'For a wedding on June 15th' or 'No rush'"
+          />
+        </div>
+
+        <!-- Submit Button -->
+        <button
+          type="submit"
+          class="w-full bg-gold hover:bg-gold-light text-bark font-bold text-lg py-4 px-8 rounded-lg shadow-gold transition-all duration-300 hover:shadow-gold-lg hover:-translate-y-0.5 uppercase tracking-wide"
+        >
+          Send Inquiry
+        </button>
+
+        <!-- Privacy Note -->
+        <p class="text-white/60 text-xs text-center">
+          By submitting this form, you agree to our privacy policy. We'll never share your information with third parties.
+        </p>
+
+      </div>
+    </form>
+
+    <!-- Alternative Contact Methods -->
+    <div class="mt-12 text-center">
+      <p class="text-white/80 mb-4">Or reach us directly:</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+        <a href="mailto:hello@bitterrootsound.com" class="flex items-center gap-2 text-gold hover:text-gold-light transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+          <span>hello@bitterrootsound.com</span>
+        </a>
+        <a href="tel:+14065555664" class="flex items-center gap-2 text-gold hover:text-gold-light transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+          </svg>
+          <span>(406) 555-SONG</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>

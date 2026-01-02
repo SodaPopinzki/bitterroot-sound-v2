@@ -1,10 +1,20 @@
 ---
-// Services.astro - Services section with 10 service cards
-// Features: Centered grid layout, hover effects, pricing cards
+// Services.astro - Services section with 3 tiers and pricing psychology
+// Features: Tiered layout, pricing psychology, comparison banner, badges
 ---
 
 <section id="services" class="py-16 md:py-24 px-4 md:px-8 bg-cream">
   <div class="max-w-7xl mx-auto">
+
+    <!-- Pricing Comparison Banner -->
+    <div class="bg-gradient-to-r from-forest to-forest-light text-white rounded-xl p-6 mb-12 text-center shadow-warm-lg">
+      <p class="font-display text-2xl md:text-3xl font-bold mb-2">
+        Premium Quality, Honest Pricing
+      </p>
+      <p class="text-white/90 text-base md:text-lg">
+        Our songs start at <span class="text-gold font-bold">$39.99</span> — competitors charge $180-$300 for similar quality
+      </p>
+    </div>
 
     <!-- Section Header -->
     <div class="text-center mb-12">
@@ -19,149 +29,199 @@
       </p>
     </div>
 
-    <!-- Services Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-      <!-- Service Card 1: Custom Song -->
-      <div class="bg-warm-white rounded-xl p-6 border border-cream shadow-warm hover:shadow-warm-lg hover:-translate-y-1 transition-all duration-300">
-        <div class="text-3xl mb-3">🎵</div>
-        <h3 class="font-display text-xl font-semibold text-bark mb-2">
-          Custom Song
-        </h3>
-        <p class="text-gold font-bold text-lg mb-3">
-          $49.99
-        </p>
-        <p class="text-stone text-sm leading-relaxed">
-          Your story transformed into a professionally crafted song in any genre you choose.
-        </p>
+    <!-- TIER 1: SIGNATURE (Life's Big Moments) -->
+    <div class="mb-16">
+      <div class="flex items-center gap-3 mb-6">
+        <h3 class="font-display text-2xl font-bold text-forest">Signature</h3>
+        <span class="text-stone text-sm">Life's Big Moments • Starting at $99.99</span>
       </div>
 
-      <!-- Service Card 2: Voice Clone Song -->
-      <div class="bg-warm-white rounded-xl p-6 border border-cream shadow-warm hover:shadow-warm-lg hover:-translate-y-1 transition-all duration-300">
-        <div class="text-3xl mb-3">🎤</div>
-        <h3 class="font-display text-xl font-semibold text-bark mb-2">
-          Voice Clone Song
-        </h3>
-        <p class="text-gold font-bold text-lg mb-3">
-          $99.99
-        </p>
-        <p class="text-stone text-sm leading-relaxed">
-          Hear your song performed in any voice—yours, a loved one's, or a custom creation.
-        </p>
-      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-      <!-- Service Card 3: Wedding Song -->
-      <div class="bg-warm-white rounded-xl p-6 border border-cream shadow-warm hover:shadow-warm-lg hover:-translate-y-1 transition-all duration-300">
-        <div class="text-3xl mb-3">💒</div>
-        <h3 class="font-display text-xl font-semibold text-bark mb-2">
-          Wedding Song
-        </h3>
-        <p class="text-gold font-bold text-lg mb-3">
-          $149.99
-        </p>
-        <p class="text-stone text-sm leading-relaxed">
-          Your love story set to music for the first dance, ceremony, or reception.
-        </p>
-      </div>
+        <!-- Memorial Tribute - Highest price first (anchoring) -->
+        <div class="bg-warm-white rounded-xl p-6 border border-cream shadow-warm hover:shadow-warm-lg hover:-translate-y-1 transition-all duration-300">
+          <div class="text-3xl mb-3">🕯️</div>
+          <h4 class="font-display text-xl font-semibold text-bark mb-2">
+            Memorial Tribute
+          </h4>
+          <div class="mb-3">
+            <p class="text-stone text-xs mb-1">Starting at</p>
+            <p class="text-gold font-bold text-3xl">199<span class="text-lg">.99</span></p>
+          </div>
+          <p class="text-stone text-sm leading-relaxed">
+            Honor their memory with a heartfelt song, optionally featuring their preserved voice.
+          </p>
+        </div>
 
-      <!-- Service Card 4: Memorial Tribute -->
-      <div class="bg-warm-white rounded-xl p-6 border border-cream shadow-warm hover:shadow-warm-lg hover:-translate-y-1 transition-all duration-300">
-        <div class="text-3xl mb-3">🕯️</div>
-        <h3 class="font-display text-xl font-semibold text-bark mb-2">
-          Memorial Tribute
-        </h3>
-        <p class="text-gold font-bold text-lg mb-3">
-          $199.99
-        </p>
-        <p class="text-stone text-sm leading-relaxed">
-          Honor their memory with a heartfelt song, optionally featuring their preserved voice.
-        </p>
-      </div>
+        <!-- Wedding Song - MOST POPULAR -->
+        <div class="relative bg-warm-white rounded-xl p-6 border-2 border-gold shadow-warm-lg hover:shadow-gold hover:-translate-y-1 transition-all duration-300">
+          <!-- Most Popular Badge -->
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-bark px-4 py-1 rounded-full text-xs font-bold uppercase shadow-gold">
+            ⭐ Most Popular
+          </div>
+          <div class="text-3xl mb-3 mt-2">💒</div>
+          <h4 class="font-display text-xl font-semibold text-bark mb-2">
+            Wedding Song
+          </h4>
+          <div class="mb-3">
+            <p class="text-stone text-xs mb-1">Starting at</p>
+            <p class="text-gold font-bold text-3xl">149<span class="text-lg">.99</span></p>
+          </div>
+          <p class="text-stone text-sm leading-relaxed">
+            Your love story set to music for the first dance, ceremony, or reception.
+          </p>
+        </div>
 
-      <!-- Service Card 5: Pet Tribute -->
-      <div class="bg-warm-white rounded-xl p-6 border border-cream shadow-warm hover:shadow-warm-lg hover:-translate-y-1 transition-all duration-300">
-        <div class="text-3xl mb-3">🐾</div>
-        <h3 class="font-display text-xl font-semibold text-bark mb-2">
-          Pet Tribute
-        </h3>
-        <p class="text-gold font-bold text-lg mb-3">
-          $39.99
-        </p>
-        <p class="text-stone text-sm leading-relaxed">
-          Celebrate your beloved companion with a song as unique as they are.
-        </p>
-      </div>
+        <!-- Voice Clone Song -->
+        <div class="bg-warm-white rounded-xl p-6 border border-cream shadow-warm hover:shadow-warm-lg hover:-translate-y-1 transition-all duration-300">
+          <div class="text-3xl mb-3">🎤</div>
+          <h4 class="font-display text-xl font-semibold text-bark mb-2">
+            Voice Clone Song
+          </h4>
+          <div class="mb-3">
+            <p class="text-stone text-xs mb-1">Starting at</p>
+            <p class="text-gold font-bold text-3xl">99<span class="text-lg">.99</span></p>
+          </div>
+          <p class="text-stone text-sm leading-relaxed">
+            Hear your song performed in any voice—yours, a loved one's, or a custom creation.
+          </p>
+        </div>
 
-      <!-- Service Card 6: Baby Announcement -->
-      <div class="bg-warm-white rounded-xl p-6 border border-cream shadow-warm hover:shadow-warm-lg hover:-translate-y-1 transition-all duration-300">
-        <div class="text-3xl mb-3">👶</div>
-        <h3 class="font-display text-xl font-semibold text-bark mb-2">
-          Baby Announcement
-        </h3>
-        <p class="text-gold font-bold text-lg mb-3">
-          $59.99
-        </p>
-        <p class="text-stone text-sm leading-relaxed">
-          Share your exciting news with a custom song family and friends will never forget.
-        </p>
       </div>
-
-      <!-- Service Card 7: Retirement Song -->
-      <div class="bg-warm-white rounded-xl p-6 border border-cream shadow-warm hover:shadow-warm-lg hover:-translate-y-1 transition-all duration-300">
-        <div class="text-3xl mb-3">🎉</div>
-        <h3 class="font-display text-xl font-semibold text-bark mb-2">
-          Retirement Song
-        </h3>
-        <p class="text-gold font-bold text-lg mb-3">
-          $79.99
-        </p>
-        <p class="text-stone text-sm leading-relaxed">
-          Celebrate their career and legacy with a personalized musical send-off.
-        </p>
-      </div>
-
-      <!-- Service Card 8: Business Jingle -->
-      <div class="bg-warm-white rounded-xl p-6 border border-cream shadow-warm hover:shadow-warm-lg hover:-translate-y-1 transition-all duration-300">
-        <div class="text-3xl mb-3">🏢</div>
-        <h3 class="font-display text-xl font-semibold text-bark mb-2">
-          Business Jingle
-        </h3>
-        <p class="text-gold font-bold text-lg mb-3">
-          $199.99
-        </p>
-        <p class="text-stone text-sm leading-relaxed">
-          A catchy, memorable jingle that makes your brand stick in customers' minds.
-        </p>
-      </div>
-
-      <!-- Service Card 9: Podcast Intro -->
-      <div class="bg-warm-white rounded-xl p-6 border border-cream shadow-warm hover:shadow-warm-lg hover:-translate-y-1 transition-all duration-300">
-        <div class="text-3xl mb-3">🎙️</div>
-        <h3 class="font-display text-xl font-semibold text-bark mb-2">
-          Podcast Intro
-        </h3>
-        <p class="text-gold font-bold text-lg mb-3">
-          $49.99
-        </p>
-        <p class="text-stone text-sm leading-relaxed">
-          Stand out from episode one with a professional custom intro and outro.
-        </p>
-      </div>
-
-      <!-- Service Card 10: Holiday Song (centered on large screens) -->
-      <div class="bg-warm-white rounded-xl p-6 border border-cream shadow-warm hover:shadow-warm-lg hover:-translate-y-1 transition-all duration-300 lg:col-start-2">
-        <div class="text-3xl mb-3">🎄</div>
-        <h3 class="font-display text-xl font-semibold text-bark mb-2">
-          Holiday Song
-        </h3>
-        <p class="text-gold font-bold text-lg mb-3">
-          $49.99
-        </p>
-        <p class="text-stone text-sm leading-relaxed">
-          Personalized seasonal songs for Christmas, birthdays, anniversaries, and more.
-        </p>
-      </div>
-
     </div>
+
+    <!-- TIER 2: PERSONAL (Celebrations & Tributes) -->
+    <div class="mb-16">
+      <div class="flex items-center gap-3 mb-6">
+        <h3 class="font-display text-2xl font-bold text-forest">Personal</h3>
+        <span class="text-stone text-sm">Celebrations & Tributes • Starting at $39.99</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Retirement Song -->
+        <div class="bg-warm-white rounded-xl p-6 border border-cream shadow-warm hover:shadow-warm-lg hover:-translate-y-1 transition-all duration-300">
+          <div class="text-3xl mb-3">🎉</div>
+          <h4 class="font-display text-xl font-semibold text-bark mb-2">
+            Retirement Song
+          </h4>
+          <div class="mb-3">
+            <p class="text-stone text-xs mb-1">Starting at</p>
+            <p class="text-gold font-bold text-3xl">79<span class="text-lg">.99</span></p>
+          </div>
+          <p class="text-stone text-sm leading-relaxed">
+            Celebrate their career and legacy with a personalized musical send-off.
+          </p>
+        </div>
+
+        <!-- Baby Announcement -->
+        <div class="bg-warm-white rounded-xl p-6 border border-cream shadow-warm hover:shadow-warm-lg hover:-translate-y-1 transition-all duration-300">
+          <div class="text-3xl mb-3">👶</div>
+          <h4 class="font-display text-xl font-semibold text-bark mb-2">
+            Baby Announcement
+          </h4>
+          <div class="mb-3">
+            <p class="text-stone text-xs mb-1">Starting at</p>
+            <p class="text-gold font-bold text-3xl">59<span class="text-lg">.99</span></p>
+          </div>
+          <p class="text-stone text-sm leading-relaxed">
+            Share your exciting news with a custom song family and friends will never forget.
+          </p>
+        </div>
+
+        <!-- Custom Song - BEST VALUE -->
+        <div class="relative bg-warm-white rounded-xl p-6 border border-cream shadow-warm hover:shadow-warm-lg hover:-translate-y-1 transition-all duration-300">
+          <!-- Best Value Badge -->
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-forest text-white px-4 py-1 rounded-full text-xs font-bold uppercase shadow-forest">
+            💎 Best Value
+          </div>
+          <div class="text-3xl mb-3 mt-2">🎵</div>
+          <h4 class="font-display text-xl font-semibold text-bark mb-2">
+            Custom Song
+          </h4>
+          <div class="mb-3">
+            <p class="text-stone text-xs mb-1">Starting at</p>
+            <p class="text-gold font-bold text-3xl">49<span class="text-lg">.99</span></p>
+          </div>
+          <p class="text-stone text-sm leading-relaxed">
+            Your story transformed into a professionally crafted song in any genre you choose.
+          </p>
+        </div>
+
+        <!-- Holiday Song -->
+        <div class="bg-warm-white rounded-xl p-6 border border-cream shadow-warm hover:shadow-warm-lg hover:-translate-y-1 transition-all duration-300">
+          <div class="text-3xl mb-3">🎄</div>
+          <h4 class="font-display text-xl font-semibold text-bark mb-2">
+            Holiday Song
+          </h4>
+          <div class="mb-3">
+            <p class="text-stone text-xs mb-1">Starting at</p>
+            <p class="text-gold font-bold text-3xl">49<span class="text-lg">.99</span></p>
+          </div>
+          <p class="text-stone text-sm leading-relaxed">
+            Personalized seasonal songs for Christmas, birthdays, anniversaries, and more.
+          </p>
+        </div>
+
+        <!-- Pet Tribute -->
+        <div class="bg-warm-white rounded-xl p-6 border border-cream shadow-warm hover:shadow-warm-lg hover:-translate-y-1 transition-all duration-300">
+          <div class="text-3xl mb-3">🐾</div>
+          <h4 class="font-display text-xl font-semibold text-bark mb-2">
+            Pet Tribute
+          </h4>
+          <div class="mb-3">
+            <p class="text-stone text-xs mb-1">Starting at</p>
+            <p class="text-gold font-bold text-3xl">39<span class="text-lg">.99</span></p>
+          </div>
+          <p class="text-stone text-sm leading-relaxed">
+            Celebrate your beloved companion with a song as unique as they are.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TIER 3: BUSINESS (Commercial Use) -->
+    <div>
+      <div class="flex items-center gap-3 mb-6">
+        <h3 class="font-display text-2xl font-bold text-forest">Business</h3>
+        <span class="text-stone text-sm">Commercial Use • Starting at $49.99</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Business Jingle -->
+        <div class="bg-warm-white rounded-xl p-6 border border-cream shadow-warm hover:shadow-warm-lg hover:-translate-y-1 transition-all duration-300">
+          <div class="text-3xl mb-3">🏢</div>
+          <h4 class="font-display text-xl font-semibold text-bark mb-2">
+            Business Jingle
+          </h4>
+          <div class="mb-3">
+            <p class="text-stone text-xs mb-1">Starting at</p>
+            <p class="text-gold font-bold text-3xl">199<span class="text-lg">.99</span></p>
+          </div>
+          <p class="text-stone text-sm leading-relaxed">
+            A catchy, memorable jingle that makes your brand stick in customers' minds.
+          </p>
+        </div>
+
+        <!-- Podcast Intro -->
+        <div class="bg-warm-white rounded-xl p-6 border border-cream shadow-warm hover:shadow-warm-lg hover:-translate-y-1 transition-all duration-300">
+          <div class="text-3xl mb-3">🎙️</div>
+          <h4 class="font-display text-xl font-semibold text-bark mb-2">
+            Podcast Intro
+          </h4>
+          <div class="mb-3">
+            <p class="text-stone text-xs mb-1">Starting at</p>
+            <p class="text-gold font-bold text-3xl">49<span class="text-lg">.99</span></p>
+          </div>
+          <p class="text-stone text-sm leading-relaxed">
+            Stand out from episode one with a professional custom intro and outro.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 </section>

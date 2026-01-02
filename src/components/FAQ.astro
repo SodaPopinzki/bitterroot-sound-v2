@@ -1,0 +1,305 @@
+---
+// FAQ.astro - Frequently Asked Questions with accordion and FAQPage schema
+// Features: Accordion functionality, structured data for SEO
+---
+
+<section id="faq" class="py-16 md:py-24 px-4 md:px-8 bg-cream">
+  <div class="max-w-4xl mx-auto">
+
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <p class="text-gold uppercase tracking-wider text-sm font-semibold mb-3">
+        COMMON QUESTIONS
+      </p>
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-forest mb-4">
+        Frequently Asked Questions
+      </h2>
+      <p class="text-stone text-lg">
+        Everything you need to know about our custom song creation process.
+      </p>
+    </div>
+
+    <!-- FAQ Accordion -->
+    <div class="space-y-4">
+
+      <!-- FAQ 1 -->
+      <div class="bg-warm-white rounded-xl border border-cream shadow-warm overflow-hidden">
+        <button class="faq-question w-full text-left p-6 flex items-center justify-between hover:bg-cream/50 transition-colors" aria-expanded="false">
+          <span class="font-display text-lg font-semibold text-bark pr-8">How does AI song creation work?</span>
+          <svg class="faq-icon w-6 h-6 text-gold flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="faq-answer overflow-hidden max-h-0 transition-all duration-300">
+          <div class="p-6 pt-0 text-stone leading-relaxed">
+            We use advanced AI technology to compose melodies and lyrics based on your story, then our human producers review, refine, and master every track. This blend of AI efficiency and human artistry ensures you get a professional, emotionally resonant song that captures your unique moment.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="bg-warm-white rounded-xl border border-cream shadow-warm overflow-hidden">
+        <button class="faq-question w-full text-left p-6 flex items-center justify-between hover:bg-cream/50 transition-colors" aria-expanded="false">
+          <span class="font-display text-lg font-semibold text-bark pr-8">What genres can you create?</span>
+          <svg class="faq-icon w-6 h-6 text-gold flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="faq-answer overflow-hidden max-h-0 transition-all duration-300">
+          <div class="p-6 pt-0 text-stone leading-relaxed">
+            We create songs in 50+ genres including country, pop, rock, R&B, folk, jazz, hip-hop, classical, electronic, and more. During the order process, you'll select your preferred genre, mood, and tempo to ensure your song matches your vision perfectly.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="bg-warm-white rounded-xl border border-cream shadow-warm overflow-hidden">
+        <button class="faq-question w-full text-left p-6 flex items-center justify-between hover:bg-cream/50 transition-colors" aria-expanded="false">
+          <span class="font-display text-lg font-semibold text-bark pr-8">How long does it take to receive my song?</span>
+          <svg class="faq-icon w-6 h-6 text-gold flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="faq-answer overflow-hidden max-h-0 transition-all duration-300">
+          <div class="p-6 pt-0 text-stone leading-relaxed">
+            Standard delivery is 48-72 hours from the time you complete your order. Need it faster? Rush 24-hour delivery is available for an additional fee. You'll receive your finished song via email as a high-quality MP3 and WAV file.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="bg-warm-white rounded-xl border border-cream shadow-warm overflow-hidden">
+        <button class="faq-question w-full text-left p-6 flex items-center justify-between hover:bg-cream/50 transition-colors" aria-expanded="false">
+          <span class="font-display text-lg font-semibold text-bark pr-8">Can you clone someone's voice?</span>
+          <svg class="faq-icon w-6 h-6 text-gold flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="faq-answer overflow-hidden max-h-0 transition-all duration-300">
+          <div class="p-6 pt-0 text-stone leading-relaxed">
+            Yes! Our Voice Clone Song service can recreate any voice from a clean audio sample (at least 30 seconds of clear speech). This is especially popular for memorial tributes where families want to hear a loved one "sing" again. We require explicit permission for living individuals.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="bg-warm-white rounded-xl border border-cream shadow-warm overflow-hidden">
+        <button class="faq-question w-full text-left p-6 flex items-center justify-between hover:bg-cream/50 transition-colors" aria-expanded="false">
+          <span class="font-display text-lg font-semibold text-bark pr-8">What do I need to provide?</span>
+          <svg class="faq-icon w-6 h-6 text-gold flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="faq-answer overflow-hidden max-h-0 transition-all duration-300">
+          <div class="p-6 pt-0 text-stone leading-relaxed">
+            Simply fill out our guided order form with your story details, key memories, emotions you want captured, and any specific lyrics or phrases you'd like included. The more detail you provide, the more personalized your song will be. For voice cloning, you'll also upload a clear audio sample.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 6 -->
+      <div class="bg-warm-white rounded-xl border border-cream shadow-warm overflow-hidden">
+        <button class="faq-question w-full text-left p-6 flex items-center justify-between hover:bg-cream/50 transition-colors" aria-expanded="false">
+          <span class="font-display text-lg font-semibold text-bark pr-8">How many revisions are included?</span>
+          <svg class="faq-icon w-6 h-6 text-gold flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="faq-answer overflow-hidden max-h-0 transition-all duration-300">
+          <div class="p-6 pt-0 text-stone leading-relaxed">
+            Every package includes one round of revisions at no extra charge. If you'd like lyric adjustments, tempo changes, or other modifications, simply let us know and we'll make it right. Additional major revisions beyond the first round may incur a small fee.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 7 -->
+      <div class="bg-warm-white rounded-xl border border-cream shadow-warm overflow-hidden">
+        <button class="faq-question w-full text-left p-6 flex items-center justify-between hover:bg-cream/50 transition-colors" aria-expanded="false">
+          <span class="font-display text-lg font-semibold text-bark pr-8">Do I own the song?</span>
+          <svg class="faq-icon w-6 h-6 text-gold flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="faq-answer overflow-hidden max-h-0 transition-all duration-300">
+          <div class="p-6 pt-0 text-stone leading-relaxed">
+            Yes! You receive full personal use rights to your custom song. You can share it, play it at events, post it on social media, and treasure it forever. Commercial use (like using a jingle in paid advertising) is included with Business tier packages.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 8 -->
+      <div class="bg-warm-white rounded-xl border border-cream shadow-warm overflow-hidden">
+        <button class="faq-question w-full text-left p-6 flex items-center justify-between hover:bg-cream/50 transition-colors" aria-expanded="false">
+          <span class="font-display text-lg font-semibold text-bark pr-8">Can I use it commercially?</span>
+          <svg class="faq-icon w-6 h-6 text-gold flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="faq-answer overflow-hidden max-h-0 transition-all duration-300">
+          <div class="p-6 pt-0 text-stone leading-relaxed">
+            Commercial use rights are included with our Business Jingle and Podcast Intro packages. For other packages, you can purchase a commercial license for an additional fee. Contact us at hello@bitterrootsound.com to discuss your specific commercial needs.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 9 -->
+      <div class="bg-warm-white rounded-xl border border-cream shadow-warm overflow-hidden">
+        <button class="faq-question w-full text-left p-6 flex items-center justify-between hover:bg-cream/50 transition-colors" aria-expanded="false">
+          <span class="font-display text-lg font-semibold text-bark pr-8">What if I'm not satisfied?</span>
+          <svg class="faq-icon w-6 h-6 text-gold flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="faq-answer overflow-hidden max-h-0 transition-all duration-300">
+          <div class="p-6 pt-0 text-stone leading-relaxed">
+            We stand behind our work with a 100% satisfaction guarantee. If you're not happy with your song after revisions, we'll refund your money—no questions asked. Our 4.9/5 rating from 127+ customers reflects our commitment to your happiness.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 10 -->
+      <div class="bg-warm-white rounded-xl border border-cream shadow-warm overflow-hidden">
+        <button class="faq-question w-full text-left p-6 flex items-center justify-between hover:bg-cream/50 transition-colors" aria-expanded="false">
+          <span class="font-display text-lg font-semibold text-bark pr-8">Why are you more affordable than competitors?</span>
+          <svg class="faq-icon w-6 h-6 text-gold flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="faq-answer overflow-hidden max-h-0 transition-all duration-300">
+          <div class="p-6 pt-0 text-stone leading-relaxed">
+            By combining AI technology with human expertise, we deliver professional quality at a fraction of traditional costs. We're based in Montana with lower overhead than coastal competitors, and we believe everyone deserves access to meaningful custom music. Quality doesn't have to be expensive.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQPage Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does AI song creation work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We use advanced AI technology to compose melodies and lyrics based on your story, then our human producers review, refine, and master every track. This blend of AI efficiency and human artistry ensures you get a professional, emotionally resonant song that captures your unique moment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What genres can you create?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We create songs in 50+ genres including country, pop, rock, R&B, folk, jazz, hip-hop, classical, electronic, and more. During the order process, you'll select your preferred genre, mood, and tempo to ensure your song matches your vision perfectly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to receive my song?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Standard delivery is 48-72 hours from the time you complete your order. Need it faster? Rush 24-hour delivery is available for an additional fee. You'll receive your finished song via email as a high-quality MP3 and WAV file."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you clone someone's voice?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! Our Voice Clone Song service can recreate any voice from a clean audio sample (at least 30 seconds of clear speech). This is especially popular for memorial tributes where families want to hear a loved one 'sing' again. We require explicit permission for living individuals."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do I need to provide?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Simply fill out our guided order form with your story details, key memories, emotions you want captured, and any specific lyrics or phrases you'd like included. The more detail you provide, the more personalized your song will be. For voice cloning, you'll also upload a clear audio sample."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many revisions are included?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every package includes one round of revisions at no extra charge. If you'd like lyric adjustments, tempo changes, or other modifications, simply let us know and we'll make it right. Additional major revisions beyond the first round may incur a small fee."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I own the song?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! You receive full personal use rights to your custom song. You can share it, play it at events, post it on social media, and treasure it forever. Commercial use (like using a jingle in paid advertising) is included with Business tier packages."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use it commercially?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Commercial use rights are included with our Business Jingle and Podcast Intro packages. For other packages, you can purchase a commercial license for an additional fee. Contact us at hello@bitterrootsound.com to discuss your specific commercial needs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I'm not satisfied?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We stand behind our work with a 100% satisfaction guarantee. If you're not happy with your song after revisions, we'll refund your money—no questions asked. Our 4.9/5 rating from 127+ customers reflects our commitment to your happiness."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why are you more affordable than competitors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "By combining AI technology with human expertise, we deliver professional quality at a fraction of traditional costs. We're based in Montana with lower overhead than coastal competitors, and we believe everyone deserves access to meaningful custom music. Quality doesn't have to be expensive."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- FAQ Accordion Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const questions = document.querySelectorAll('.faq-question');
+
+    questions.forEach(question => {
+      question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        const icon = question.querySelector('.faq-icon');
+        const isExpanded = question.getAttribute('aria-expanded') === 'true';
+
+        // Close all other FAQs
+        questions.forEach(q => {
+          if (q !== question) {
+            const a = q.nextElementSibling;
+            const i = q.querySelector('.faq-icon');
+            q.setAttribute('aria-expanded', 'false');
+            a.style.maxHeight = '0';
+            i.style.transform = 'rotate(0deg)';
+          }
+        });
+
+        // Toggle current FAQ
+        if (isExpanded) {
+          question.setAttribute('aria-expanded', 'false');
+          answer.style.maxHeight = '0';
+          icon.style.transform = 'rotate(0deg)';
+        } else {
+          question.setAttribute('aria-expanded', 'true');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+          icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+  });
+</script>

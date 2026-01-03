@@ -1,0 +1,296 @@
+---
+// AudioSamples.astro - Audio samples section with custom music player
+// Features: 6 sample tracks, play/pause controls, progress bars, time display
+
+const sampleTracks = [
+  {
+    id: 1,
+    title: "Forever Starts Today",
+    genre: "Country",
+    occasion: "Wedding First Dance",
+    duration: "3:24",
+    audioSrc: "/audio/sample-wedding.mp3"
+  },
+  {
+    id: 2,
+    title: "Remember When",
+    genre: "Folk Ballad",
+    occasion: "Memorial Tribute",
+    duration: "3:45",
+    audioSrc: "/audio/sample-memorial.mp3"
+  },
+  {
+    id: 3,
+    title: "Little Adventures",
+    genre: "Pop",
+    occasion: "Baby Announcement",
+    duration: "2:58",
+    audioSrc: "/audio/sample-baby.mp3"
+  },
+  {
+    id: 4,
+    title: "Best Friend Blues",
+    genre: "Acoustic",
+    occasion: "Pet Tribute",
+    duration: "2:34",
+    audioSrc: "/audio/sample-pet.mp3"
+  },
+  {
+    id: 5,
+    title: "Bitterroot Brewing Co.",
+    genre: "Jingle",
+    occasion: "Business Jingle",
+    duration: "0:32",
+    audioSrc: "/audio/sample-jingle.mp3"
+  },
+  {
+    id: 6,
+    title: "The Mountain Hour",
+    genre: "Rock",
+    occasion: "Podcast Intro",
+    duration: "0:28",
+    audioSrc: "/audio/sample-podcast.mp3"
+  }
+];
+---
+
+<section id="samples" class="py-16 md:py-24 px-4 md:px-8 bg-warm-white">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <p class="text-gold uppercase tracking-wider text-sm font-semibold mb-3">
+        HEAR THE QUALITY
+      </p>
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-forest mb-4">
+        Listen to Sample Songs
+      </h2>
+      <p class="text-stone text-lg max-w-2xl mx-auto mb-2">
+        Every song is unique. These samples showcase our range of genres and styles.
+      </p>
+      <p class="text-stone text-sm flex items-center justify-center gap-2">
+        <span>🎧</span>
+        <span>These are real songs we've created for customers (shared with permission)</span>
+      </p>
+    </div>
+
+    <!-- Sample Tracks Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+
+      {sampleTracks.map((track) => (
+        <div class="bg-white rounded-xl p-6 border border-cream shadow-warm hover:shadow-warm-lg hover:-translate-y-1 transition-all duration-300">
+
+          <!-- Genre Badge -->
+          <div class="mb-3">
+            <span class="inline-block bg-cream text-forest text-xs font-semibold px-3 py-1 rounded-full border border-forest/20">
+              {track.genre}
+            </span>
+          </div>
+
+          <!-- Track Info -->
+          <h3 class="font-display text-xl font-semibold text-bark mb-1">
+            {track.title}
+          </h3>
+          <p class="text-stone text-sm mb-4">
+            {track.occasion}
+          </p>
+
+          <!-- Audio Player -->
+          <div class="space-y-3">
+
+            <!-- Hidden Audio Element -->
+            <audio
+              id={`audio-${track.id}`}
+              data-track-id={track.id}
+              preload="metadata"
+              class="hidden"
+            >
+              <source src={track.audioSrc} type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+
+            <!-- Player Controls -->
+            <div class="flex items-center gap-4">
+
+              <!-- Play/Pause Button -->
+              <button
+                id={`play-btn-${track.id}`}
+                class="play-btn flex-shrink-0 w-12 h-12 rounded-full bg-forest text-white flex items-center justify-center hover:bg-forest-dark transition-all duration-200 hover:scale-105 shadow-forest"
+                data-track-id={track.id}
+                aria-label="Play"
+              >
+                <!-- Play Icon (default) -->
+                <svg id={`play-icon-${track.id}`} class="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
+                </svg>
+                <!-- Pause Icon (hidden by default) -->
+                <svg id={`pause-icon-${track.id}`} class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M5.75 3a.75.75 0 00-.75.75v12.5c0 .414.336.75.75.75h1.5a.75.75 0 00.75-.75V3.75A.75.75 0 007.25 3h-1.5zM12.75 3a.75.75 0 00-.75.75v12.5c0 .414.336.75.75.75h1.5a.75.75 0 00.75-.75V3.75a.75.75 0 00-.75-.75h-1.5z"/>
+                </svg>
+              </button>
+
+              <!-- Progress Bar Container -->
+              <div class="flex-1">
+                <!-- Progress Bar -->
+                <div
+                  id={`progress-container-${track.id}`}
+                  class="h-2 bg-gray-200 rounded-full cursor-pointer overflow-hidden mb-2 group"
+                  data-track-id={track.id}
+                >
+                  <div
+                    id={`progress-bar-${track.id}`}
+                    class="h-full bg-gold rounded-full transition-all duration-100"
+                    style="width: 0%"
+                  ></div>
+                </div>
+
+                <!-- Time Display -->
+                <div class="flex items-center justify-between text-xs text-stone">
+                  <span id={`current-time-${track.id}`}>0:00</span>
+                  <span class="text-stone/60">{track.duration}</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Loading/Error State -->
+            <div id={`error-${track.id}`} class="hidden text-center py-2 text-stone text-sm">
+              <p>🎵 Audio sample unavailable</p>
+              <p class="text-xs mt-1">Contact us to hear examples of our work</p>
+            </div>
+
+          </div>
+
+        </div>
+      ))}
+
+    </div>
+
+    <!-- CTA Below Samples -->
+    <div class="text-center mt-12">
+      <p class="text-stone mb-4">Love what you hear?</p>
+      <a href="#contact" class="btn-primary inline-block text-lg px-8 py-4">
+        Create Your Custom Song
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Audio Player JavaScript -->
+<script>
+  // Global state to track currently playing audio
+  let currentlyPlaying = null;
+
+  // Initialize all audio players
+  document.addEventListener('DOMContentLoaded', () => {
+    const playButtons = document.querySelectorAll('.play-btn');
+
+    playButtons.forEach(button => {
+      const trackId = button.dataset.trackId;
+      const audio = document.getElementById(`audio-${trackId}`);
+      const playIcon = document.getElementById(`play-icon-${trackId}`);
+      const pauseIcon = document.getElementById(`pause-icon-${trackId}`);
+      const progressBar = document.getElementById(`progress-bar-${trackId}`);
+      const progressContainer = document.getElementById(`progress-container-${trackId}`);
+      const currentTimeDisplay = document.getElementById(`current-time-${trackId}`);
+      const errorDiv = document.getElementById(`error-${trackId}`);
+
+      if (!audio) return;
+
+      // Handle audio loading errors
+      audio.addEventListener('error', () => {
+        errorDiv?.classList.remove('hidden');
+        button.disabled = true;
+        button.classList.add('opacity-50', 'cursor-not-allowed');
+      });
+
+      // Play/Pause button click
+      button.addEventListener('click', () => {
+        // If another track is playing, pause it
+        if (currentlyPlaying && currentlyPlaying !== audio) {
+          currentlyPlaying.pause();
+          currentlyPlaying.currentTime = 0;
+
+          // Reset the other track's UI
+          const otherId = currentlyPlaying.dataset.trackId;
+          const otherPlayIcon = document.getElementById(`play-icon-${otherId}`);
+          const otherPauseIcon = document.getElementById(`pause-icon-${otherId}`);
+          otherPlayIcon?.classList.remove('hidden');
+          otherPauseIcon?.classList.add('hidden');
+        }
+
+        // Toggle play/pause
+        if (audio.paused) {
+          audio.play();
+          playIcon?.classList.add('hidden');
+          pauseIcon?.classList.remove('hidden');
+          currentlyPlaying = audio;
+        } else {
+          audio.pause();
+          playIcon?.classList.remove('hidden');
+          pauseIcon?.classList.add('hidden');
+          currentlyPlaying = null;
+        }
+      });
+
+      // Update progress bar as audio plays
+      audio.addEventListener('timeupdate', () => {
+        if (audio.duration) {
+          const progress = (audio.currentTime / audio.duration) * 100;
+          if (progressBar) {
+            progressBar.style.width = `${progress}%`;
+          }
+
+          // Update current time display
+          if (currentTimeDisplay) {
+            currentTimeDisplay.textContent = formatTime(audio.currentTime);
+          }
+        }
+      });
+
+      // Reset when audio ends
+      audio.addEventListener('ended', () => {
+        audio.currentTime = 0;
+        playIcon?.classList.remove('hidden');
+        pauseIcon?.classList.add('hidden');
+        if (progressBar) {
+          progressBar.style.width = '0%';
+        }
+        if (currentTimeDisplay) {
+          currentTimeDisplay.textContent = '0:00';
+        }
+        currentlyPlaying = null;
+      });
+
+      // Click on progress bar to seek
+      progressContainer?.addEventListener('click', (e) => {
+        if (!audio.duration) return;
+
+        const rect = progressContainer.getBoundingClientRect();
+        const clickX = e.clientX - rect.left;
+        const percentage = clickX / rect.width;
+        audio.currentTime = percentage * audio.duration;
+      });
+    });
+  });
+
+  // Format time in MM:SS
+  function formatTime(seconds) {
+    if (isNaN(seconds)) return '0:00';
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${mins}:${secs.toString().padStart(2, '0')}`;
+  }
+</script>
+
+<style>
+  /* Additional custom styles if needed */
+  .play-btn:active {
+    transform: scale(0.95);
+  }
+
+  #progress-container:hover .progress-bar {
+    opacity: 0.9;
+  }
+</style>
